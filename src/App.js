@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import { v4 as uuidv4 } from "uuid"
+import { FaPlus } from "react-icons/fa"
+import List from "./List"
+import logo from "./logo.svg"
 
-function App() {
+const App = () => {
+  const [text, setText] = useState("")
+  const [items, setItems] = useState([])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if (!text) {
+      alert("Input is empty")
+    } else {
+      const newList = { id: uuidv4(), title: text }
+      setItems([newList, ...items])
+      setText("")
+
+      console.log(newList.id)
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <div className="container">
+        <div>
+          <h2 className="heading">
+            <img src={logo} alt="" />
+          </h2>
+        </div>
+        <section className="container-inner">
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="text">Enter your todo item</label>
+            <input
+              type="text"
+              id="text"
+              placeholder="e.g. Make youtube video"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
+            <button type="submit" className="btnAdd">
+              <FaPlus style={{ marginRight: 10 }} /> Add item
+            </button>
+          </form>
+
+          <List items={items} setItems={setItems} />
+        </section>
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
