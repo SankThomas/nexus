@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/out/nexus-win32-x64/resources/app/node_modules
 /.pnp
 .pnp.js
 
