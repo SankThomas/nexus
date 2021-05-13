@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import { FaPlus } from "react-icons/fa"
 import List from "./List"
 import logo from "./logo.svg"
+import DateTime from "./components/Date"
 
 const getLocalStorage = () => {
   let items = localStorage.getItem("items")
@@ -50,11 +51,14 @@ const App = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="wrapper">
         <div>
           <h2 className="heading">
-            <img src={logo} alt="" />
+            <img src={logo} alt="Nexus logo" className="block mx-auto" />
           </h2>
+        </div>
+        <div>
+          <DateTime />
         </div>
         <section className="container-inner">
           <form onSubmit={handleSubmit}>
