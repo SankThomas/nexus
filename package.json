@@ -10,6 +10,7 @@
   "repository": "https://github.com/SankThomas/nexus.git",
   "version": "0.1.0",
   "main": "public/main.js",
+  "license": "ISC",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
@@ -17,6 +18,7 @@
     "@testing-library/user-event": "^12.8.3",
     "electron-is-dev": "^2.0.0",
     "electron-squirrel-startup": "^1.0.0",
+    "path": "^0.12.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
