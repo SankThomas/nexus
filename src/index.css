@@ -101,13 +101,38 @@ h2 {
   width: 150px;
 }
 
-.container {
+/* Loading spinner */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.spinner {
+  border: 2px solid #999;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border-top-color: #ef4444;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* End of loading spinner */
+
+.wrapper {
   background-color: #f6d6d6;
   min-height: 100vh;
   padding: 10px 20px 80px;
 }
 
-.container h2 {
+.wrapper h2 {
   text-transform: uppercase;
   text-align: center;
   padding: 20px 50px;
