@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid"
 import { FaPlus } from "react-icons/fa"
 import List from "./List"
 import logo from "./logo.svg"
-import DateTime from "./components/Date"
+// import DateTime from "./components/Date"
 
 const getLocalStorage = () => {
   let items = localStorage.getItem("items")
@@ -57,9 +57,9 @@ const App = () => {
             <img src={logo} alt="Nexus logo" className="block mx-auto" />
           </h2>
         </div>
-        <div>
+        {/* <div>
           <DateTime />
-        </div>
+        </div> */}
         <section className="container-inner">
           <form onSubmit={handleSubmit}>
             <label htmlFor="text">Enter your todo item</label>
