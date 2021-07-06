@@ -29,7 +29,7 @@ const App = () => {
       alert("Input is empty")
     } else {
       const newList = { id: uuidv4(), title: text }
-      setItems([newList, ...items])
+      setItems([...items, newList])
       setText("")
     }
   }
