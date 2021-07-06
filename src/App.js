@@ -61,7 +61,7 @@ const App = () => {
           <DateTime />
         </div> */}
         <section className="container-inner">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} autoComplete="off">
             <label htmlFor="text">Enter your todo item</label>
             <input
               type="text"
